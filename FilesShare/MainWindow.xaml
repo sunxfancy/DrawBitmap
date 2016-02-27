@@ -1,0 +1,32 @@
+﻿<loc:FatherWindow
+        xmlns:loc="clr-namespace:DrawBitmap.Windows;assembly=DrawBitmap"
+        xmlns:local="clr-namespace:FilesShare"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="FilesShare.MainWindow"
+        Title="MainWindow" Height="400" Width="600" WindowStyle="None" AllowsTransparency="True" AllowDrop="True">
+    <Grid Name="myGrid" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="27*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="273*"/>
+            <RowDefinition Height="50*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="50*"/>
+            <ColumnDefinition Width="135*"/>
+            <ColumnDefinition Width="15*"/>
+        </Grid.ColumnDefinitions>
+        <Button Grid.Column="2"  Click="Close" Content="X"/>
+
+        <Button Name="Set" MinWidth="80" Grid.Row="1" Click="SetShareFolder" Content="设置我的共享文件夹" Height="42" VerticalAlignment="Bottom" />
+        <TextBlock x:Name="currentFolder" Grid.Column="1" Grid.Row="1" FontSize="20"/>
+        <Button Content="确定" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Grid.Row="3" Grid.Column="1" Margin="230,18,0,0" Click="Ensure"/>
+        <Button Content="取消" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Grid.Row="3" Grid.Column="1" Margin="320,18,0,0" Click="Close"/>
+
+
+
+
+    </Grid>
+
+</loc:FatherWindow>

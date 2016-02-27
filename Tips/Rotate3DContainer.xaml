@@ -1,0 +1,20 @@
+﻿<Canvas Name="tdCanvas"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             
+            xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions" 
+             
+             x:Class="WPFDemo.Rotate3DContainer" 
+             
+             mc:Ignorable="d" Background="Transparent"  Focusable="True" Height="100" Width="200">
+
+    <i:Interaction.Behaviors>
+        <ei:MouseDragElementBehavior/>
+    </i:Interaction.Behaviors>
+
+
+</Canvas>
+         
+    

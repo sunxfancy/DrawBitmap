@@ -1,0 +1,61 @@
+﻿<Window x:Class="MyWork_D.Canvas4All"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Canvas4All" SizeChanged="Window_SizeChanged" Height="400" Width="700" AllowsTransparency="True" WindowStyle="None">
+    <Window.Background>
+        <ImageBrush ImageSource="Resource/bkg.jpg"></ImageBrush>
+    </Window.Background>
+    <Grid Name="grid_0" Background="Transparent" MouseLeftButtonDown="Grid_MouseLeftButtonDown">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="27*"/>
+                <RowDefinition Height="262*"/>
+                <RowDefinition Height="22*"/>
+                <RowDefinition Height="63*"/>
+                <RowDefinition Height="26*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="32*"/>
+                <ColumnDefinition Width="509*"/>
+                <ColumnDefinition Width="166*"/>
+            </Grid.ColumnDefinitions>
+            <DockPanel HorizontalAlignment="Right" Grid.Column="2" Width="43">
+                <Button Click="MIN">__</Button>
+                <Button Click="MAX_NORMAL">口</Button>
+                <Button Click="CLOSE">X</Button>
+
+            </DockPanel>
+            <InkCanvas Visibility="Collapsed" Name="Canvas_p"  Grid.Row="1" Grid.ColumnSpan="2"></InkCanvas>
+            <StackPanel SizeChanged="Window_SizeChanged"  Name="select_Panel" MouseLeftButtonDown="Span_select" Grid.Row="2" Grid.RowSpan="3">
+                <StackPanel.Background>
+                    <ImageBrush ImageSource="Resource/frame3.png"></ImageBrush>
+                </StackPanel.Background>
+                <Image  Name="Chat_Span" MouseLeftButtonUp="Span_select" ToolTip="聊天室" Tag="0" Stretch="Fill" Source="Resource/chat.jpg" Margin="0,3,0,3"></Image>
+                <Image   Name="Pen_Span" MouseLeftButtonUp="Span_select"  ToolTip="画笔" Tag="1" Stretch="Fill" Source="Resource/Pen.jpg" Margin="0,3,0,3" ></Image>
+            </StackPanel>
+        <ScrollViewer Name="Chat_SHOW_SCroll" VerticalScrollBarVisibility="Auto" Grid.Column="1" Grid.Row="2" Grid.RowSpan="2">
+        <TextBox IsReadOnly="True"    Background="Transparent"  TextWrapping="Wrap" Name="Chat_Show" />
+        </ScrollViewer>
+        <TextBox  Background="Transparent"  Name="Chat_Edit" KeyUp="TEXT_Send" Grid.Row="4" Grid.Column="1">
+            <TextBox.BorderBrush>
+                <SolidColorBrush Color="Black" ></SolidColorBrush>
+            </TextBox.BorderBrush>
+        </TextBox>
+        <StackPanel Name="Pen_p" Visibility="Collapsed" Background="Transparent" Grid.Column="1" Grid.Row="2" Grid.RowSpan="3">
+            <DockPanel HorizontalAlignment="Left" Height="20" >
+                <Button>颜色>></Button>
+                <Button   Click="get_color" Tag="0" Background="Black" Width="20"></Button>
+                <Button  Click="get_color" Tag="1"  Background="BlueViolet" Width="20"></Button>
+                <Button   Click="get_color" Tag="2" Background="Red" Width="20"></Button>
+                <Button Click="Button_Click">ceshi</Button>
+            </DockPanel>
+
+            <DockPanel HorizontalAlignment="Left" Height="20">
+                <Button>大小>></Button>
+                <Button   Click="get_size" Tag="0" Width="20">小</Button>
+                <Button  Click="get_size" Tag="1"   Width="20">中</Button>
+                <Button   Click="get_size" Tag="2"  Width="20">大</Button>
+            </DockPanel>
+        </StackPanel>
+
+        </Grid>
+</Window>

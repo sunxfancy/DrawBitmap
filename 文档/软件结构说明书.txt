@@ -1,0 +1,254 @@
+# 结构设计文档
+
+## 结构总述
+畅想器是一个多人联网应用平台，由核心启动器，服务器，插件和插件附带的应用四大部分组成。
+
+软件的整体架构是，一台服务器为主，负责和各客户端的通信，维护数据库，维护在线用户的数据。
+各个客户端分别会和服务器通信，传递数据，好友信息等等。客户端加载一个插件列表，维护了大量的工具类。插件有的功能丰富，但有的只是一个启动器，另外启动一个进程来实现功能。
+
+下面就来依次介绍一下各工程的功能
+
+### DrawBitmap 
+是整个系统的核心工程，是包含一个登陆器，主界面，插件启动器，软件客户端等的一个庞大的工程，是所有插件的容器。
+
+### Server
+是核心的服务器端，数据库是MySQL，采取的是Tcp连接，负责维护服务端数据
+
+### MuticastNetwork
+是基础通信类，封装了Tcp连接和串行化操作，可以快速部署成多播通信模型
+
+### ClientTest、Servertest
+是MuticastNetwork的测试项目
+
+### Plugin、UserApplication文件夹
+Plugin下的是所有的插件工程
+UserApplication下的则是所有的独立应用工程
+
+### Dreaming
+是多人联网画图应用的初级测试版，现已过时
+
+### DreamingPlugin
+是多人联网画图的启动用插件
+
+### DreamingApp
+是多人联网画图的实质应用程序
+
+### FilesShare
+是多人文件分享应用，尚未完成
+
+### MultiIE
+是多人浏览器的测试模型，现不支持中文，基本没法使，待改进
+
+### TalkPlugin
+是多人聊天应用程序，现未实现
+
+### TalkApp
+是多人聊天的原型程序，现只支持两人聊天
+
+### Tips
+是一个小的任务板插件
+
+## DrawBitmap结构详解
+
+### 总述
+DrawBitmap采取MVC式架构，Model模型-View视图-Control控制器，视图层和模型分类，都有统一的控制API进行管理。
+
+### MainClass
+MainClass文件夹是整个工程的核心类集，下面的各类都负责逻辑上的核心问题处理，对应于Model模型和Control控制器
+
+#### API类
+API类是整个软件的核心控制类，内有一些控制主应用程序的函数接口，用于控制主应用程序的行为，但由于应用程序的行为并不多，所以API类不大。
+
+    /// 得到主界面上的你可以控制的WPF节点对象，str是对象的名字，obj是你想添加的WPF节点
+    public static void AddUserWindowChild(string str,UIElement obj)
+    
+    /// 用来获取自己的数据
+    public static Friend Me
+    
+    ///用来实现登陆功能
+    public static bool Login(string username,string password)
+     
+    ///测试用登陆，用于非联网
+    public static void TestLogin()
+         
+    /// 打开一个打开文件对话框，用于打开图片
+    public static string OpenImageFile()
+
+
+#### ServerAPI类
+ServerAPI类是软件联网通信的核心接口类，都是静态函数，且每个函数都是线程同步的，内部还有ServerAPI初始化的函数。
+这些函数都是远程调用的形式，主要用于通知服务器和从服务器获取数据。使用时建议新开线程，采取异步的方式调用。
+
+    ///初始化ip和端口号，构建客户端对象
+    public static void InitServerAPI()
+
+    ///  注册 
+    ///  发送格式：UserMessage(1, RegisterData(User(1, null, username, nickname),password);)
+    ///  接收格式：int，注册成功返回用户id，否则返回-1
+    public static int Register(string username,string password,string nickname)
+
+    /// 登录
+    /// 发送格式：UserMessage(2, LoginData(username, password))
+    /// 接收格式：LoginReturn,要求LoginReturn各成员变量不为null 
+    public static LoginReturn Login(string username, string password)
+
+    /// 确认在线操作，并获取自己在服务器端消息盒子里的新消息
+    /// 发送格式：UserMessage(3, id)
+    /// 接收格式：List&lt;UserMessage&gt;     
+    public static List<UserMessage> Checking(int id)
+
+    /// 邀请好友
+    /// 发送格式：UserMessage(4, List<int>); List第一项为插件id，第二项为邀请人id，接下来的都是被邀请人id
+    /// 接收格式：bool 消息成功发送true，消息发送失败false
+    public static bool InviteFriends(int plugin_id,int my_id,SortedSet<int> id_list)
+
+    /// 测试名字是否可用
+    /// 发送格式：UserMessage(5, name)
+    /// 接收格式：bool 是true ，否false
+    public static int TestName(string name)
+
+    /// 根据名字查找好友
+    /// 发送格式：UserMessage(6,name);
+    /// 接收格式：List<User>;
+    public static List<User> SearchFriends(string name)
+
+    /// 加好友（请求人id, 被请求人id）
+    public static bool AddFriend(int my_id ,int f_id)
+
+    /// 更新我自身的数据，向服务器提交我的最新数据
+    /// 发送格式：UserMessage(8, User);
+    /// 接收格式：是否更改成功，true or false
+    public static bool UpdataMyInfo(Friend data)
+    public static bool UpdataMyInfo(User data)
+
+    /// 更新Password（用户id，旧密码，新密码）
+    public static int UpdataMyPassword(int id,string oldp,string newp)
+
+    /// 根据id获取指定人的全部数据
+    public static User GetFriendData(int id)
+
+    /// 获取指定群组的信息
+    public static GroupData GetGroupData(int id)
+
+    /// 获取一组人的数据，是上面两个方法的整合
+     public static ReturnData GetGroupData(List<int> friend_list,List<int> group_list)
+
+    /// 回应一个增加好友的请求
+    /// 发送格式：UserMessage(13, int[3]{请求人id,被请求人id,0或1(拒绝与否)});
+    public static bool AgreeAddFriend(int my_id,int friend_id,int attitude)
+
+    /// 确认某条通知类信息已经处理过了
+    public static bool confirmMessage(int user_id,int msg_id)
+
+#### AppData类
+AppData类是整个程序的核心数据承载类，里面有大量实例化的和静态的数据对象，绝大部分是public的，建议日后改为属性的方式。
+可以在这里获取到，所有好友的hash表，群组的hash表，插件hash表，自己的用户数据。
+并且本类中还拥有各类数据的初始化方式，包括联网和本地加载。
+
+你还可以从中找到好友的id到对象的映射表：
+
+    public SortedDictionary<int, Friend> FriendList
+
+另外有一个用来承载所有发给你消息的对象表，由于消息不根据id排序，故直接用一个顺序表：
+
+    public List<MessageDone> MessageList
+
+插件系统的初始化也在这里
+
+    public void InitPlugin()
+
+主的初始化方法是`InitLoginData()`方法
+
+    public void InitLoginData(LoginReturn data)
+
+先通过联网获取一个LoginReturn，然后传入该函数即可。
+初始化数据，先加载自己的数据，然后是好友列表，然后是群组表，插件表
+每项加载分为四步：
+
+1.从磁盘缓存加载好友数据
+2.联网获取时间戳
+3.校验版本
+4.若为旧版则更新数据
+
+尚未完成从磁盘加载，应该建立一个缓存机制。
+
+另外本类中有一个最重要的部分——插件系统
+
+##### 插件系统
+插件系统由以下几个模块组成
+
+1. 插件承载模块
+
+2. 插件初始化模块
+
+3. 插件数据交互模块
+
+4. 插件本身
+
+###### 插件承载模块
+插件承载由以下部分组成：
+
+最重要的就是这两行代码
+
+    [ImportMany(typeof(Plugin))]
+    public IEnumerable<Plugin> plugin_list;
+
+这两句会将插件加载到`plugin_list`这个列表内，里面都是`Plugin`类型的实例化对象
+但这往往不是找到一个插件的最好方式，为了便捷的找到一个插件，我在初始化时，将它们统统扔到了一个`SortedDictionary`容器内
+    
+    public static SortedDictionary<int, Plugin> plugin_dic
+
+这个字典就是插件id到其实例的映射表。 
+
+###### 插件初始化模块
+
+    public void InitPluginSystem()
+这个函数会记录主程序启动的此时，保证在第一次启动的时候，加载所有插件到全局的插件表中，之后都会从插件表中直接加载。
+
+每一个插件都有自己的初始化函数
+Plugin类下面有Init()方法，是每个插件自己用来初始化的，当然，也用来初始UI。
+
+###### 插件数据交互模块
+插件的UI是自行监听的，主程序并不负责UI，但插件如果希望能让主程序传入对应参数，用户列表等信息，表示用户希望启动自己，则可以调用该event：`PluginRunEventHandler`，它会出发AppData类中的这个回调函数
+
+    void item_runhandle(object sender, PluginRunEvent.PluginRunEventArgs args)
+
+这个函数能负责传入插件所需要的数据并启动插件。
+
+###### 插件本身
+插件类Plugin，是所有插件的接口
+各个插件都从此接口派生出来一个PluginMain类
+插件如果想实现第一次加载就加载所有必要资源，获取必要数据，但不是每次登陆都需要的，建议在构造函数后就自行添加加载工作。
+如果想实现每次加载进行数据更新，加载用户相关的资源，建议在init函数中进行。
+如何想加载用户ip相关，同聊天室好友数据等，建议在PluginRun方法中进行。
+
+#### CanSelect类
+好友和群组的共同父类，主要是为了在界面上显示一个勾选中的效果。内有Select()方法，每调用一次，就可以将选中异或一下。
+
+
+
+#### Friend类
+应用程序用来在本地存储好友数据的类，内部还保存了界面UI->SwingImage作为Father
+内部更新方法可以直接更新自己的承载器，实现界面效果的更新
+另外Friend类有一个构造方法，可以直接从User类构建成Friend类。
+
+#### User类
+用来在网络上通信使用的类，是可被直接串行化的，数据易于传递，User类也有一个构造方法，可以直接从Friend构建成User类。
+
+#### Group类
+应用程序用来在本地存储群组数据的类。
+
+#### GetReturn类
+这是一个处理服务器发给我们客户端消息的类，并将处理结果添加到AppData中
+
+#### Plugin接口
+本插件系统最核心的接口，应用程序定义的接口，会被各个插件实现，每个插件都会作为Plugin接口的实例化对象保存在AppData类中，这样我们通过主应用程序调用Plugin接口中的方法，就会被多态调用，转而调用各个插件的方法。
+
+#### SendMessage类
+客户端登陆后，每秒会向服务器端发送一条确认自己在线的消息，如果5秒内未发送，则认为是客户端掉线，SendMessage就会在登陆后，开始不停的启动自己的一个线程进行消息发送，并在发送消息时，去取服务器端的用户邮槽，如果有别人发来的Message，这时就会被取到本地，并发至GetReturn类进行处理。
+
+#### UserMessage类
+本软件最重要的通信数据类，包括UserMessage.cs文件下的诸多类，大多支持串行化，他们是为了做网络通信而专门设计的，UserMessage类就是客户端和服务端消息的包装类，用来实现双方通信。
+
+
+

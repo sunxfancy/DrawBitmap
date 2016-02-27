@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>ColorWheel.Controls</id>
+    <version>1.7.14.51712</version>
+    <authors>asyrovprog</authors>
+    <owners>asyrovprog</owners>
+    <licenseUrl>http://color.codeplex.com/license</licenseUrl>
+    <projectUrl>http://color.codeplex.com/</projectUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <description>Components for color editing such as color wheel, brightness-saturation editor, color compoenent editor (R-G-B-A-Hue-Sat-Bri).</description>
+    <summary>ColorWheel controls libraries.</summary>
+    <releaseNotes>Package Structure Update</releaseNotes>
+    <tags>WPF Silverlight Color</tags>
+  </metadata>
+</package>

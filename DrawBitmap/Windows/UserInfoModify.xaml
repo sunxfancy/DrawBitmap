@@ -1,0 +1,10 @@
+﻿<loc:FatherWindow x:Class="DrawBitmap.Windows.UserInfoModify"
+      xmlns:loc="clr-namespace:DrawBitmap.Windows"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="UserInfoModify" Height="385" Width="500">
+    <Canvas>
+        <DockPanel Name="titleBar" Height="45" Width="75" Canvas.Right="0"></DockPanel>
+        <Frame Margin="0,45,0,0" Canvas.Right="0" Canvas.Left="0" x:Name="frame"  Source="/DrawBitmap;component/Windows/RegExtPage2.xaml" NavigationUIVisibility="Hidden"/>
+    </Canvas>
+ </loc:FatherWindow>

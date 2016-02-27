@@ -1,0 +1,12 @@
+﻿<Window x:Class="DreamingApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:loc="clr-namespace:DreamingApp"
+        Title="畅想器" Height="700" Width="1366" WindowState="Maximized" KeyDown="Window_KeyDown_1" Initialized="Window_Initialized_1" AllowDrop="True">
+    <Grid>
+        <ScrollViewer x:Name="scrollViewer" HorizontalScrollBarVisibility="Auto">
+            <InkCanvas x:Name="ink" PreviewMouseRightButtonUp="InkCanvas_PreviewMouseRightButtonUp_1" MouseMove="ink_MouseMove" Cursor="Pen" ForceCursor="True" StrokeCollected="ink_StrokeCollected" Grid.ColumnSpan="2"  PreviewMouseLeftButtonDown="ink_PreviewMouseLeftButtonDown" StrokeErased="ink_StrokeErased" StrokesReplaced="ink_StrokesReplaced" MouseWheel="ink_MouseWheel" Width="1366" Height="768" HorizontalAlignment="Left" VerticalAlignment="Top" />
+        </ScrollViewer>
+        <loc:ColorPopup x:Name="popup" />
+    </Grid>
+</Window>

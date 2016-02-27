@@ -1,0 +1,13 @@
+﻿<loc:FatherWindow x:Class="DrawBitmap.Windows.MessageList"
+        xmlns:loc="clr-namespace:DrawBitmap.Windows"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MessageList" Height="300" Width="308" Initialized="Window_Initialized_1" ResizeMode="NoResize">
+    <StackPanel>
+        <DockPanel Height="45" Width="75" HorizontalAlignment="Right" Name="titleBar"></DockPanel>
+        <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+            <StackPanel x:Name="data" Height="230">
+            </StackPanel>
+        </ScrollViewer>
+    </StackPanel>
+</loc:FatherWindow>

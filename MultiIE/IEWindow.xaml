@@ -1,0 +1,73 @@
+﻿<Window 
+    x:Name="webWindow" 
+    x:Class="MultiIE.IEWindow" 
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    xmlns:awe="http://schemas.awesomium.com/winfx" 
+    xmlns:data="http://schemas.awesomium.com/winfx/data" 
+    xmlns:core="clr-namespace:Awesomium.Core;assembly=Awesomium.Core" 
+    WindowStartupLocation="CenterScreen" 
+    Title="{Binding Title, ElementName=webControl}" 
+    Height="700" 
+    Width="1200">
+    <Window.Resources>
+        <awe:WebSessionProvider x:Key="webSession" DataPath=".\Cache">
+            <core:WebPreferences 
+                ShrinkStandaloneImagesToFit="False" 
+                SmoothScrolling="True" />
+        </awe:WebSessionProvider>
+
+        <awe:UrlConverter x:Key="UrlConverter" />
+    </Window.Resources>
+    <awe:WebDialogsLayer>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+                <RowDefinition />
+                <RowDefinition Height="25" />
+            </Grid.RowDefinitions>
+            <DockPanel LastChildFill="True">
+                <Button 
+                    Content="Back" 
+                    Width="60" 
+                    Command="{x:Static NavigationCommands.BrowseBack}" 
+                    CommandTarget="{Binding ElementName=webControl}"/>
+                <Button 
+                    Content="Forward" 
+                    Width="60" 
+                    Command="{x:Static NavigationCommands.BrowseForward}" 
+                    CommandTarget="{Binding ElementName=webControl}"/>
+                <Button 
+                    Content="Reload" 
+                    Width="60" 
+                    Command="{x:Static NavigationCommands.Refresh}" 
+                    CommandParameter="False" 
+                    CommandTarget="{Binding ElementName=webControl}"/>
+                <Button 
+                    Content="Home" 
+                    Width="60" 
+                    Command="{x:Static NavigationCommands.BrowseHome}" 
+                    CommandTarget="{Binding ElementName=webControl}"/>
+                <TextBox 
+                    FontSize="16" 
+                    Padding="3,0" 
+                    VerticalContentAlignment="Center" 
+                    TextWrapping="NoWrap" 
+                    Text="{data:SourceBinding webControl}" />
+            </DockPanel>
+            <awe:WebControl 
+                Grid.Row="1" 
+                x:Name="webControl" 
+                IsTransparent="True" 
+                WebSession="{Binding Source={StaticResource webSession}}" 
+                Source="{Binding Source, ElementName=webWindow}" />
+            <TextBlock 
+                Grid.Row="2" 
+                VerticalAlignment="Center" 
+                Padding="3" 
+                TextWrapping="NoWrap" 
+                TextTrimming="CharacterEllipsis" 
+                Text="{Binding TargetURL, ElementName=webControl, Converter={StaticResource UrlConverter}}"/>
+        </Grid>
+    </awe:WebDialogsLayer>
+</Window>

@@ -1,0 +1,41 @@
+﻿<Page Name="loginpage"
+    x:Class="DrawBitmap.LoginPage"
+      xmlns:loc="clr-namespace:DrawBitmap.Windows"
+      xmlns:locc="clr-namespace:GifImageLib"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      d:DesignHeight="360"
+	  Title="LoginPage" Width="500"
+      xmlns:themes="clr-namespace:WPF.Themes;assembly=WPF.Themes">  
+    <Canvas  Name="myContent" >
+        <StackPanel Name="loginP" Canvas.Left="170"  Visibility="Hidden"  Panel.ZIndex="30" Canvas.Top="20"  Height="190" Width="160">
+            <Label FontFamily="方正喵呜体" FontSize="25" Height="30"  HorizontalAlignment="Center" >Loading....</Label>
+            <locc:GifImage x:Name="loginGif" Source="Resource\login.gif" Height="160" Width="160"></locc:GifImage>
+        <!--<loc:MyImage x:Name="imgClose" Background="BlueViolet" Height="30" Width="30" HorizontalAlignment="Right"></loc:MyImage><-->
+        </StackPanel>
+        <DockPanel HorizontalAlignment="Left" Margin="0,273,0,0">
+            <locc:GifImage Margin="6,0,0,0"   Source="E:\Documents\Visual Studio 2013\Projects\DrawTogether\DrawBitmap\Resource\login_bk.gif"></locc:GifImage>
+            <locc:GifImage  Margin="2,0,0,0"  Source="E:\Documents\Visual Studio 2013\Projects\DrawTogether\DrawBitmap\Resource\login_bk.gif"></locc:GifImage>
+            <locc:GifImage Margin="2,0,0,0" Source="E:\Documents\Visual Studio 2013\Projects\DrawTogether\DrawBitmap\Resource\login_bk.gif"></locc:GifImage>
+            <locc:GifImage Margin="2,0,0,0" Source="E:\Documents\Visual Studio 2013\Projects\DrawTogether\DrawBitmap\Resource\login_bk.gif"></locc:GifImage>
+            <locc:GifImage Margin="2,0,0,0" Source="E:\Documents\Visual Studio 2013\Projects\DrawTogether\DrawBitmap\Resource\login_bk.gif"></locc:GifImage>
+            <locc:GifImage Margin="2,0,0,0" Source="E:\Documents\Visual Studio 2013\Projects\DrawTogether\DrawBitmap\Resource\login_bk.gif"></locc:GifImage>
+        </DockPanel>
+        <Label Content="用户名" Canvas.Left="90" Canvas.Top="84" Width="76" Height="50" FontSize="20.0" Foreground="Black" HorizontalContentAlignment="Center"/>
+        <Label Content="密码" Canvas.Left="90" Canvas.Top="143" Width="76" Height="50" FontSize="20.0" Foreground="Black" HorizontalContentAlignment="Center"/>
+        <ComboBox x:Name="Username" Canvas.Left="171" Canvas.Top="87" Width="174" Height="30" IsEditable="True" RenderTransformOrigin="0.484,1.355" FontSize="20.0"/>
+        <PasswordBox x:Name="Password" Height="30" Canvas.Left="171"   Canvas.Top="145" Width="174" Background="#FFFFFCFC"  FontSize="20.0"/>
+        <Button Name="login_button" Content="登录" Canvas.Left="171" Canvas.Top="195" Width="73" Height="45" Click="Button_Click" 
+                VerticalAlignment="Bottom" HorizontalAlignment="Right" Foreground="#FF0A0A0F" MouseDown="Button_MouseDown" MouseLeave="Button_MouseLeave" BorderThickness="1" BorderBrush="#FF155799" FontSize="16" Background="#FF56C7EC" TextOptions.TextFormattingMode="Display" FontWeight="Bold"/>
+        <Button Name="register_button" Content="注册" Canvas.Left="272" Canvas.Top="195" Width="73" Height="45" Click="RegisterButtonDown"
+                VerticalAlignment="Bottom" HorizontalAlignment="Right" Background="#FF42F57B" BorderBrush="#FF042915" Foreground="#FF0F0F19" MouseDown="Button_MouseDown_1" MouseLeave="Button_MouseLeave_1" FontSize="16" TextOptions.TextFormattingMode="Display" FontWeight="Bold"/>
+        <Button Content="TestOpenMain" Canvas.Left="390" Canvas.Top="221" Width="89" Click="Button_Click_1" />
+        
+        <DockPanel Name="titleBar" Height="45" Background="Transparent" Width="75" HorizontalAlignment="Left" Canvas.Right="0"></DockPanel>
+
+        <Button Content="TestSetingPage" Canvas.Left="390" Canvas.Top="195" Width="89" RenderTransformOrigin="0.12,0.789" Click="Button_Click_2"/>
+    </Canvas>
+</Page>

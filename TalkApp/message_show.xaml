@@ -1,0 +1,17 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:awe="http://schemas.awesomium.com/winfx" x:Class="TalkApp.message_show" 
+             xmlns:data="http://schemas.awesomium.com/winfx/data" 
+             mc:Ignorable="d" 
+             d:DesignWidth="300" ScrollViewer.VerticalScrollBarVisibility="Disabled" Loaded="UserControl_Loaded">
+    <StackPanel ScrollViewer.VerticalScrollBarVisibility="Disabled">
+        <StackPanel Orientation="Horizontal">
+            <Image x:Name="user_image" Source="4.gif" Stretch="Fill" Width="30" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Label x:Name="user" VerticalContentAlignment="Center" Content="name"/>
+        </StackPanel>
+        <awe:WebControl x:Name="web" Loaded="web_Loaded" Margin="30,0,0,0" ScrollViewer.VerticalScrollBarVisibility="Disabled" LoadingFrameComplete="web_LoadingFrameComplete" />
+    </StackPanel>
+</UserControl>

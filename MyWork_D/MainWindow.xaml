@@ -1,0 +1,10 @@
+﻿<Window x:Class="MyWork_D.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <StackPanel Name="pp">
+        <Button    Height="40" Width="120" FontSize="27" Click="Button_Click"  >打开</Button>
+        <Image Source="Resource/dd.png"  MouseLeftButtonUp="img_MouseLeftButtonUp" MouseLeave="img_MouseLeave" Name="img" MouseEnter="img_MouseEnter" Height="40"></Image>
+        
+</StackPanel>
+</Window>

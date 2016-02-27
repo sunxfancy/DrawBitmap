@@ -1,0 +1,29 @@
+﻿<ListBox     x:Class="FilesShare.MyDetailFolder"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d"
+          Height="273" Width="405"
+        Name="FileListBox" Background ="Transparent" ItemsSource="{Binding}" ScrollViewer.CanContentScroll="True" MouseDoubleClick="updateFolderLayout" KeyUp="backspace">
+    <ListBox.ItemsPanel>
+        <ItemsPanelTemplate>
+            <UniformGrid Columns="5" VerticalAlignment="Top" HorizontalAlignment="Center"/>
+        </ItemsPanelTemplate>
+    </ListBox.ItemsPanel>
+    <ListBox.ItemTemplate>
+        <DataTemplate>
+            <Grid HorizontalAlignment="Center" >
+                <Grid.RowDefinitions >
+                    <RowDefinition Height="50" ></RowDefinition>
+                    <RowDefinition Height="50" ></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="70"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Image Source="{Binding Pic}"/>
+                <TextBlock Text="{Binding Name}" Grid.Row="1"  TextWrapping="Wrap" HorizontalAlignment="Center"/>
+            </Grid>
+        </DataTemplate>
+    </ListBox.ItemTemplate>
+</ListBox>

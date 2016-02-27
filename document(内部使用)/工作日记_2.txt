@@ -1,0 +1,79 @@
+服务端与客户端的通信
+	1.注册
+		客户端：发送UserMessage
+
+			包含 ——>  type , RegisterData{User , password}
+		服务端：返回id
+			用obj接收id
+				id=-1表示注册失败
+	2.登陆
+		客户端：发送UserMessage
+
+			包含->  type ,  LoginData{username , password , ip}
+		服务端：返回	List<user>-->有更新的 好友 
+
+	3.确认在线（接收所有在线信息）
+		客户端：发送UserMessage
+			包含->type ， id;
+		服务端：返回List<UserMessage> 
+			包含->type ， data 
+				data：1.上线消息  -> id
+				      2.下线消息 -> id
+	
+	4.发送插件操作
+		客户端：发送UserMessage
+			包含->type，List<int>（第0个是插件类型，第一个是邀请人的id，后面是邀请列表）
+		服务端：返回bool，是否成功（返回信息给在线好友）
+
+	
+	5.注册用户名验证
+		客户端：发送UserMessage
+			包含->type,string（用户名）
+		服务端：返回bool，是否成功
+			
+	6.搜索用户方式1——用户名法
+		客户端：发送UserMessage
+			type，string（user.name)
+
+		服务端：返回User
+
+	7.添加好友
+		客户端：发送UserMessage
+				包含->type ,    AddFriendData -> 包含 id （自己的id）, id（好友的用户名）
+							
+		服务端：返回bool，是否成功（返回信息给好友）
+
+	8.更新资料
+		客户端：发送UserMessage
+				包含->type,User(更新后的用户信息，存放在User中)
+		服务端：返回bool，是否成功（返回信息给好友）
+
+	9.修改密码
+		客户端：发送UserMessage
+				包含->type,UpdatePasswordData(包含id，oldpassword， newpassword)
+		服务端：返回bool，是否成功
+
+
+	10.根据id获取指定人的全部数据
+
+
+	11.根据id获取群组的数据信息
+
+
+	12.批量获取用户和群组的信息
+
+	13.同意加某人为好友 myid friendid
+
+	14.确认某条通知类消息已经看过
+		data int[]{用户id，信息id};
+服务端发送消息给客户端（用户确认在线时给其发送）-->针对在线用户
+type      操作						data
+1			上线					id，ip	
+2			下线					id	
+3			收到好友邀请插件    	int[itype,id]
+4			收到好友添加请求		User
+5			更新资料				User
+6          你请求加的人表态了  List{User(被请求人) ，  bool   同意或者拒绝}
+
+
+

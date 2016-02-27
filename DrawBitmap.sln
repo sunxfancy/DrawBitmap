@@ -1,0 +1,204 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30110.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MulticastNetWork", "MulticastNetWork\MulticastNetWork.csproj", "{CACA60FE-B543-41AD-BF69-FDF49EBD0FA5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Multicast", "Multicast", "{EC693D2A-E08E-4FFB-93EA-5967D481F2C1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Server", "Server\Server.csproj", "{E5E8577C-9F44-411D-BA78-C95D28393F79}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dreaming", "WpfControlLibrary1\Dreaming.csproj", "{D048635F-0FD0-4B8F-8D87-45EDFC43C529}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiIE", "MultiIE\MultiIE.csproj", "{55C82339-F131-40FB-AD8D-24535CE2B88C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Plugin", "Plugin", "{4E49E6EA-5126-4355-A4FB-F4C365EAB935}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tips", "Tips\Tips.csproj", "{7CB2FA44-8CAE-4CBE-A638-121195155481}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DrawBitmap", "DrawBitmap\DrawBitmap.csproj", "{EDA474B1-A6AF-4BE6-A112-62BC73693DE9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UserApplication", "UserApplication", "{8A91EBCC-D443-455E-9DDA-2A756BF6769C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientTest", "ClientTest\ClientTest.csproj", "{5A28CE86-C8C2-492D-8A29-8B2D2EC35939}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServerTest", "ServerTest\ServerTest.csproj", "{D236FC1F-1878-4092-9423-7A1786116E1F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DreamingApp", "DreamingApp\DreamingApp.csproj", "{D556EC4F-A1BD-4712-95EA-E5F8F40ABD86}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TalkPlugin", "TalkPlugin\TalkPlugin.csproj", "{25DEB968-D8D4-4B7E-8B4D-377260FA77BB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DreamingPlugin", "DreamingPlugin\DreamingPlugin.csproj", "{01C6ACB1-1F44-4671-9985-34AE06EB5C3D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TalkApp", "TalkApp\TalkApp.csproj", "{5CF7E44F-2974-4221-96BB-8FEB4462C50F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FilesShare", "FilesShare\FilesShare.csproj", "{ACC97F22-33CC-4EDF-9867-EFEDA9C49424}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DrawBitmapTests", "DrawBitmapTests\DrawBitmapTests.csproj", "{527F5D2C-3A29-42D2-8B18-84C120BA965F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TalkPluginTest", "TalkPluginTest\TalkPluginTest.csproj", "{E87AEAC8-ED24-4696-AA36-99B7B36385FB}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 13
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://sunxiaofan.visualstudio.com/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = MulticastNetWork\\MulticastNetWork.csproj
+		SccProjectTopLevelParentUniqueName1 = DrawBitmap.sln
+		SccProjectName1 = MulticastNetWork
+		SccLocalPath1 = MulticastNetWork
+		SccProjectUniqueName2 = DreamingApp\\DreamingApp.csproj
+		SccProjectTopLevelParentUniqueName2 = DrawBitmap.sln
+		SccProjectName2 = DreamingApp
+		SccLocalPath2 = DreamingApp
+		SccProjectUniqueName3 = DrawBitmap\\DrawBitmap.csproj
+		SccProjectName3 = DrawBitmap
+		SccLocalPath3 = DrawBitmap
+		SccProjectUniqueName4 = Server\\Server.csproj
+		SccProjectName4 = Server
+		SccLocalPath4 = Server
+		SccProjectUniqueName5 = Tips\\Tips.csproj
+		SccProjectTopLevelParentUniqueName5 = DrawBitmap.sln
+		SccProjectName5 = Tips
+		SccLocalPath5 = Tips
+		SccProjectUniqueName6 = ClientTest\\ClientTest.csproj
+		SccProjectTopLevelParentUniqueName6 = DrawBitmap.sln
+		SccProjectName6 = ClientTest
+		SccLocalPath6 = ClientTest
+		SccProjectUniqueName7 = ServerTest\\ServerTest.csproj
+		SccProjectTopLevelParentUniqueName7 = DrawBitmap.sln
+		SccProjectName7 = ServerTest
+		SccLocalPath7 = ServerTest
+		SccProjectUniqueName8 = DreamingPlugin\\DreamingPlugin.csproj
+		SccProjectTopLevelParentUniqueName8 = DrawBitmap.sln
+		SccProjectName8 = DreamingPlugin
+		SccLocalPath8 = DreamingPlugin
+		SccProjectUniqueName9 = FilesShare\\FilesShare.csproj
+		SccProjectTopLevelParentUniqueName9 = DrawBitmap.sln
+		SccProjectName9 = FilesShare
+		SccLocalPath9 = FilesShare
+		SccProjectUniqueName10 = DrawBitmapTests\\DrawBitmapTests.csproj
+		SccProjectName10 = DrawBitmapTests
+		SccLocalPath10 = DrawBitmapTests
+		SccProjectUniqueName11 = TalkApp\\TalkApp.csproj
+		SccProjectTopLevelParentUniqueName11 = DrawBitmap.sln
+		SccProjectName11 = TalkApp
+		SccLocalPath11 = TalkApp
+		SccProjectUniqueName12 = TalkPluginTest\\TalkPluginTest.csproj
+		SccProjectTopLevelParentUniqueName12 = DrawBitmap.sln
+		SccProjectName12 = TalkPluginTest
+		SccLocalPath12 = TalkPluginTest
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CACA60FE-B543-41AD-BF69-FDF49EBD0FA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CACA60FE-B543-41AD-BF69-FDF49EBD0FA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CACA60FE-B543-41AD-BF69-FDF49EBD0FA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CACA60FE-B543-41AD-BF69-FDF49EBD0FA5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E5E8577C-9F44-411D-BA78-C95D28393F79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5E8577C-9F44-411D-BA78-C95D28393F79}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5E8577C-9F44-411D-BA78-C95D28393F79}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5E8577C-9F44-411D-BA78-C95D28393F79}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D048635F-0FD0-4B8F-8D87-45EDFC43C529}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D048635F-0FD0-4B8F-8D87-45EDFC43C529}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D048635F-0FD0-4B8F-8D87-45EDFC43C529}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D048635F-0FD0-4B8F-8D87-45EDFC43C529}.Release|Any CPU.Build.0 = Release|Any CPU
+		{55C82339-F131-40FB-AD8D-24535CE2B88C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55C82339-F131-40FB-AD8D-24535CE2B88C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55C82339-F131-40FB-AD8D-24535CE2B88C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55C82339-F131-40FB-AD8D-24535CE2B88C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7CB2FA44-8CAE-4CBE-A638-121195155481}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7CB2FA44-8CAE-4CBE-A638-121195155481}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7CB2FA44-8CAE-4CBE-A638-121195155481}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7CB2FA44-8CAE-4CBE-A638-121195155481}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EDA474B1-A6AF-4BE6-A112-62BC73693DE9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDA474B1-A6AF-4BE6-A112-62BC73693DE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EDA474B1-A6AF-4BE6-A112-62BC73693DE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EDA474B1-A6AF-4BE6-A112-62BC73693DE9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A28CE86-C8C2-492D-8A29-8B2D2EC35939}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A28CE86-C8C2-492D-8A29-8B2D2EC35939}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A28CE86-C8C2-492D-8A29-8B2D2EC35939}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A28CE86-C8C2-492D-8A29-8B2D2EC35939}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D236FC1F-1878-4092-9423-7A1786116E1F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D236FC1F-1878-4092-9423-7A1786116E1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D236FC1F-1878-4092-9423-7A1786116E1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D236FC1F-1878-4092-9423-7A1786116E1F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D556EC4F-A1BD-4712-95EA-E5F8F40ABD86}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D556EC4F-A1BD-4712-95EA-E5F8F40ABD86}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D556EC4F-A1BD-4712-95EA-E5F8F40ABD86}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D556EC4F-A1BD-4712-95EA-E5F8F40ABD86}.Release|Any CPU.Build.0 = Release|Any CPU
+		{25DEB968-D8D4-4B7E-8B4D-377260FA77BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{25DEB968-D8D4-4B7E-8B4D-377260FA77BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{25DEB968-D8D4-4B7E-8B4D-377260FA77BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{25DEB968-D8D4-4B7E-8B4D-377260FA77BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{01C6ACB1-1F44-4671-9985-34AE06EB5C3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01C6ACB1-1F44-4671-9985-34AE06EB5C3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01C6ACB1-1F44-4671-9985-34AE06EB5C3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01C6ACB1-1F44-4671-9985-34AE06EB5C3D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5CF7E44F-2974-4221-96BB-8FEB4462C50F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5CF7E44F-2974-4221-96BB-8FEB4462C50F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5CF7E44F-2974-4221-96BB-8FEB4462C50F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5CF7E44F-2974-4221-96BB-8FEB4462C50F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ACC97F22-33CC-4EDF-9867-EFEDA9C49424}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ACC97F22-33CC-4EDF-9867-EFEDA9C49424}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ACC97F22-33CC-4EDF-9867-EFEDA9C49424}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ACC97F22-33CC-4EDF-9867-EFEDA9C49424}.Release|Any CPU.Build.0 = Release|Any CPU
+		{527F5D2C-3A29-42D2-8B18-84C120BA965F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{527F5D2C-3A29-42D2-8B18-84C120BA965F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{527F5D2C-3A29-42D2-8B18-84C120BA965F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{527F5D2C-3A29-42D2-8B18-84C120BA965F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E87AEAC8-ED24-4696-AA36-99B7B36385FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E87AEAC8-ED24-4696-AA36-99B7B36385FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E87AEAC8-ED24-4696-AA36-99B7B36385FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E87AEAC8-ED24-4696-AA36-99B7B36385FB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{CACA60FE-B543-41AD-BF69-FDF49EBD0FA5} = {EC693D2A-E08E-4FFB-93EA-5967D481F2C1}
+		{5A28CE86-C8C2-492D-8A29-8B2D2EC35939} = {EC693D2A-E08E-4FFB-93EA-5967D481F2C1}
+		{D236FC1F-1878-4092-9423-7A1786116E1F} = {EC693D2A-E08E-4FFB-93EA-5967D481F2C1}
+		{55C82339-F131-40FB-AD8D-24535CE2B88C} = {4E49E6EA-5126-4355-A4FB-F4C365EAB935}
+		{D048635F-0FD0-4B8F-8D87-45EDFC43C529} = {4E49E6EA-5126-4355-A4FB-F4C365EAB935}
+		{7CB2FA44-8CAE-4CBE-A638-121195155481} = {4E49E6EA-5126-4355-A4FB-F4C365EAB935}
+		{25DEB968-D8D4-4B7E-8B4D-377260FA77BB} = {4E49E6EA-5126-4355-A4FB-F4C365EAB935}
+		{01C6ACB1-1F44-4671-9985-34AE06EB5C3D} = {4E49E6EA-5126-4355-A4FB-F4C365EAB935}
+		{ACC97F22-33CC-4EDF-9867-EFEDA9C49424} = {4E49E6EA-5126-4355-A4FB-F4C365EAB935}
+		{E87AEAC8-ED24-4696-AA36-99B7B36385FB} = {4E49E6EA-5126-4355-A4FB-F4C365EAB935}
+		{D556EC4F-A1BD-4712-95EA-E5F8F40ABD86} = {8A91EBCC-D443-455E-9DDA-2A756BF6769C}
+		{5CF7E44F-2974-4221-96BB-8FEB4462C50F} = {8A91EBCC-D443-455E-9DDA-2A756BF6769C}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 8
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://sunxiaofan.visualstudio.com/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = DrawBitmap\\DrawBitmap.csproj
+		SccProjectName1 = DrawBitmap
+		SccLocalPath1 = DrawBitmap
+		SccProjectUniqueName2 = MulticastNetWork\\MulticastNetWork.csproj
+		SccProjectTopLevelParentUniqueName2 = DrawBitmap.sln
+		SccProjectName2 = MulticastNetWork
+		SccLocalPath2 = MulticastNetWork
+		SccProjectUniqueName3 = ClientTest\\ClientTest.csproj
+		SccProjectTopLevelParentUniqueName3 = DrawBitmap.sln
+		SccProjectName3 = ClientTest
+		SccLocalPath3 = ClientTest
+		SccProjectUniqueName4 = ServerTest\\ServerTest.csproj
+		SccProjectTopLevelParentUniqueName4 = DrawBitmap.sln
+		SccProjectName4 = ServerTest
+		SccLocalPath4 = ServerTest
+		SccProjectUniqueName5 = Server\\Server.csproj
+		SccProjectName5 = Server
+		SccLocalPath5 = Server
+		SccProjectUniqueName6 = UnitTestProject\\UnitTestProject.csproj
+		SccProjectName6 = UnitTestProject
+		SccLocalPath6 = UnitTestProject
+	EndGlobalSection
+EndGlobal

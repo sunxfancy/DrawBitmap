@@ -1,0 +1,1 @@
+AnyChatCoreServer.exe -r

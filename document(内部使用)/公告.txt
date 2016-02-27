@@ -1,0 +1,16 @@
+熊猫致王奥鑫
+	1.实现一个检查用户合法性的方法(已实现)
+		public int checkUser(string username ,string password)
+		1表示合法
+		-1表示不合法
+
+	2.实现一个方法，通过id返回用户信息(已实现)
+		public User getUserById(int id);
+
+	3.修改 public DrawBitmap.User getUserByName(String username)
+		如果没有这个user的话，可以返回一个用户id为-1的user
+
+	4.添加一个sortedset<int>列，存放所有更新过的好友
+	
+	5.添加一个获取所有更新用户的函数，用于用户登录时获取他所有更新的好友，
+		private static List<User> getUpdateFriends(int id)

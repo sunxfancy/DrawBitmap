@@ -1,0 +1,51 @@
+﻿<Page x:Class="DrawBitmap.SearchFriendsByName"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:loc="clr-namespace:DrawBitmap"
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="500"
+	Title="SearchFriendsByName">
+    <Grid>
+        <!-- <src:SearchBox  HorizontalAlignment="Left" Height="35" Margin="55,51,0,0"  VerticalAlignment="Top" Width="356" VerticalContentAlignment="Center" FontSize="16"/> -->
+        <loc:SearchBox x:Name="searcher"  HorizontalAlignment="Left" Height="37" Margin="48,55,0,0" SearchTip="输入用户名，搜索联系人..." VerticalAlignment="Top" Width="361" VerticalContentAlignment="Center" FontSize="16" KeyDown="SearchBox_KeyDown_1"/>
+        <ListView x:Name="userlist" Margin="48,97,52,43" Width="400" Height="160">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header = "头像" Width="50">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Image Source="{Binding User_Image}"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn> 
+                    <GridViewColumn Header="用户名" Width="60" DisplayMemberBinding="{Binding name}"/>
+                    <GridViewColumn Header="昵称" Width="90" DisplayMemberBinding="{Binding nickname}"/>
+                    <GridViewColumn Header="年龄" Width="50" DisplayMemberBinding="{Binding Age}"/>
+                    <GridViewColumn Header="家乡" Width="50" DisplayMemberBinding="{Binding Hometown}"/>
+                    <GridViewColumn Header="格言" Width="100" DisplayMemberBinding="{Binding Motto}"/> 
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        <Canvas HorizontalAlignment="Left" Visibility="Hidden" Height="171" Margin="-1,97,0,0" VerticalAlignment="Top" Width="45">
+            <Canvas.Background>
+                <ImageBrush ImageSource="/DrawBitmap;component/Resource/left-grey.png"/>
+            </Canvas.Background>
+        </Canvas>
+        <Canvas Height="171" Margin="455,97,0,0" Visibility="Hidden" VerticalAlignment="Top" HorizontalAlignment="Left" Width="45">
+            <Canvas.Background>
+                <ImageBrush ImageSource="/DrawBitmap;component/Resource/right-grey.png"/>
+            </Canvas.Background>
+        </Canvas>
+        <Button  HorizontalAlignment="Left" Margin="414,55,0,0" VerticalAlignment="Top" Width="35" Height="37" Click="Button_Click_1" BorderBrush="{x:Null}" Foreground="{x:Null}">
+            <Button.Background>
+                <ImageBrush ImageSource="/DrawBitmap;component/Resource/icon/magnifier.png"/>
+            </Button.Background>
+
+        </Button>
+        <Button Content="加为好友" HorizontalAlignment="Left" Margin="48,262,0,0" VerticalAlignment="Top" Width="402" RenderTransformOrigin="-0.453,0.474" Click="Button_Click_2"/>
+
+    </Grid>
+</Page>

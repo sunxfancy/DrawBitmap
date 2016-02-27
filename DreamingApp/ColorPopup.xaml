@@ -1,0 +1,21 @@
+﻿<Popup x:Class="DreamingApp.ColorPopup"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+       xmlns:Controls="clr-namespace:ColorWheel.Controls;assembly=ColorWheel.Controls"
+             mc:Ignorable="d" 
+            AllowsTransparency="True"
+           PopupAnimation="Fade" StaysOpen="False" Closed="Popup_Closed" >
+    <Border BorderThickness="5" BorderBrush="#FF001764"  CornerRadius="10,10,10,10"  Name="top" Background="#FFE0E0E0" Height="238">
+        <Grid Width="160" Margin="0,3,0,5">
+            
+            <Controls:ColorWheelControl x:Name="wheel" HorizontalAlignment="Center" Height="150"  VerticalAlignment="Top" Width="150" ColorSelected="wheel_ColorSelected" ColorsUpdated="wheel_ColorsUpdated" MouseDoubleClick="wheel_MouseDoubleClick" />
+            <Controls:ColorComponentSlider x:Name="slider" SmallChange="1" LargeChange="25" VerticalAlignment="Top" Height="33" Margin="0,155,0,0"
+            SliderColorComponent="Bri"
+             ValueChanged="slider_ValueChanged"  />
+            <Slider HorizontalAlignment="Left" VerticalAlignment="Top" Height="24" Width="121" Margin="34,195,0,0" ValueChanged="Slider_ValueChanged_1" Minimum="1" SmallChange="0.5"/>
+            <Label Content="线宽" HorizontalAlignment="Left" Margin="0,193,0,0" VerticalAlignment="Top"/>
+        </Grid>
+    </Border>
+</Popup>

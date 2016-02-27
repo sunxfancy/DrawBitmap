@@ -1,0 +1,28 @@
+﻿<Page x:Class="DrawBitmap.Register"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      d:DesignHeight="300"
+	Title="Register"  Height="300" Width="500" Background="Transparent" >
+
+    <Canvas  >
+        <Image Height="26" Canvas.Left="20" Width="29" Canvas.Top="10" MouseLeftButtonDown="back_Image_MouseLeftButtonDown" RenderTransformOrigin="0.552,0.5" Source="/DrawBitmap;component/Resource/back_button.jpg"/>
+        <Label Content="新用户注册" Canvas.Left="191" Height="43" Width="207" FontSize="20.0" Canvas.Top="10"/>
+        <Label Content="用户名" Canvas.Left="68" Canvas.Top="47" Width="84" Height="30" FontSize="15.0"/>
+        <Label Content="昵称" Canvas.Left="68" Canvas.Top="85" Width="84" Height="30" FontSize="15.0"/>
+        <Label Content="密码" Canvas.Left="68" Canvas.Top="122" Width="84" Height="30" FontSize="15.0"/>
+        <Label Content="重复密码" Canvas.Left="68" Canvas.Top="157" Width="84" Height="30" FontSize="14.0"/>
+        <TextBox x:Name="id_text" Canvas.Left="147" Canvas.Top="47" Width="240" Height="30"   FontSize="20.0" LostFocus="id_text_LostFocus" GotFocus="id_text_GotFocus"/>
+        <TextBox x:Name="name_text" Canvas.Left="147" Canvas.Top="85" Width="240" Height="30"   FontSize="20.0"/>
+        <PasswordBox x:Name="pword1" Height="30" Canvas.Left="147"   Canvas.Top="122" Width="240"  FontSize="20.0"/>
+        <PasswordBox x:Name="pword2" Height="30" Canvas.Left="147"   Canvas.Top="157" Width="240"  FontSize="20.0"/>
+
+        <Button Content="注册" Canvas.Left="201" Canvas.Top="201" Width="108" Height="26" Click="Button_Click" 
+    		VerticalAlignment="Bottom" HorizontalAlignment="Right" FontWeight="bold" RenderTransformOrigin="0.583,0.115"/>
+        <Label  x:Name="info" Content="" Canvas.Left="86" Canvas.Top="232" Width="361" FontSize="15.0" FontStyle="Oblique" Height="58"  />
+        <Image Name ="state_right" Height="24" Canvas.Left="394" Canvas.Top="51" Width="26" Source="/DrawBitmap;component/Resource/accept.ico" RenderTransformOrigin="-0.385,0.083" Visibility="Hidden" />
+        <Image Name ="state_wrong" Height="24" Canvas.Left="394" Canvas.Top="51" Width="26" Source="/DrawBitmap;component/Resource/delete.ico" RenderTransformOrigin="-0.385,0.083" Visibility="Hidden"/>
+    </Canvas>
+</Page>

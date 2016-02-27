@@ -1,0 +1,17 @@
+﻿<Application x:Class="TalkApp.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Startup="Application_Startup"
+              xmlns:awe="http://schemas.awesomium.com/winfx" 
+        xmlns:data="http://schemas.awesomium.com/winfx/data" 
+        xmlns:core="clr-namespace:Awesomium.Core;assembly=Awesomium.Core" 
+             >
+    <Application.Resources>
+        <ResourceDictionary>
+            <awe:WebSessionProvider x:Key="mySession">
+                <core:WebPreferences 
+                SmoothScrolling="True"
+                LoadImagesAutomatically="False"/>
+            </awe:WebSessionProvider>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

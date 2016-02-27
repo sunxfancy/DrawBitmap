@@ -1,0 +1,965 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EDA474B1-A6AF-4BE6-A112-62BC73693DE9}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DrawBitmap</RootNamespace>
+    <AssemblyName>DrawBitmap</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <SccProjectName>%24/DrawTogether/DrawBitmap</SccProjectName>
+    <SccLocalPath>.</SccLocalPath>
+    <SccAuxPath>https://sunxiaofan.visualstudio.com/defaultcollection</SccAuxPath>
+    <SccProvider>{4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}</SccProvider>
+    <ExpressionBlendVersion>12.0.41212.0</ExpressionBlendVersion>
+    <TargetFrameworkProfile />
+    <PublishUrl>发布\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\bin\Testing\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resource\logo.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="presentationframework.aero" />
+    <Reference Include="Sker.Controls">
+      <HintPath>Resource\Sker.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WPF.Themes">
+      <HintPath>Resource\WPF.Themes.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="MainClass\AppInit.cs" />
+    <Compile Include="MainClass\GetReturn.cs" />
+    <Compile Include="MainClass\GroupCard.cs" />
+    <Compile Include="MainClass\ServerAPI.cs" />
+    <Compile Include="MainClass\Tips.cs" />
+    <Compile Include="MainClass\Updata.cs" />
+    <Compile Include="UserControls\ExtendFriendList.xaml.cs">
+      <DependentUpon>ExtendFriendList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\MessageShow.xaml.cs">
+      <DependentUpon>MessageShow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\SearchBox.xaml.cs">
+      <DependentUpon>SearchBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\DragCanvas.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Windows\FatherWindow.cs" />
+    <Compile Include="Windows\GifAnimation.cs" />
+    <Compile Include="Windows\GifImage.cs" />
+    <Compile Include="Windows\MessageList.xaml.cs">
+      <DependentUpon>MessageList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\MyImage.xaml.cs">
+      <DependentUpon>MyImage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\NewAGroup.xaml.cs">
+      <DependentUpon>NewAGroup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\RegExtPage2.xaml.cs">
+      <DependentUpon>RegExtPage2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\SearchFriendsByName.xaml.cs">
+      <DependentUpon>SearchFriendsByName.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\SelectionCanvas.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Windows\SetingWindow.xaml.cs" />
+    <Compile Include="Windows\AddFriends.xaml.cs">
+      <DependentUpon>AddFriends.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainClass\AppData.cs" />
+    <Compile Include="UserControls\ExtendList.xaml.cs">
+      <DependentUpon>ExtendList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainClass\CanSelect.cs" />
+    <Compile Include="MainClass\FriendClass.cs" />
+    <Compile Include="MainClass\Friend.cs" />
+    <Compile Include="MainClass\Friends.cs" />
+    <Compile Include="MainClass\Group.cs" />
+    <Compile Include="MainClass\API.cs" />
+    <Compile Include="Windows\LoginPage.xaml.cs">
+      <DependentUpon>LoginPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainClass\People.cs" />
+    <Compile Include="MainClass\Plugin.cs" />
+    <Compile Include="MainClass\PluginRunEvent.cs" />
+    <Compile Include="Windows\RegExtPage.xaml.cs">
+      <DependentUpon>RegExtPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\RegisterPage.xaml.cs">
+      <DependentUpon>RegisterPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainClass\SendMessage.cs" />
+    <Compile Include="MainClass\Settings.cs" />
+    <Compile Include="UserControls\SwingImage.xaml.cs" />
+    <Compile Include="MainClass\User.cs" />
+    <Compile Include="MainClass\UserMessage.cs" />
+    <Compile Include="Windows\UcImageCropper.xaml.cs">
+      <DependentUpon>UcImageCropper.xaml</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Windows\UserInfoModify.xaml.cs">
+      <DependentUpon>UserInfoModify.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\UserWindow.xaml.cs">
+      <DependentUpon>UserWindow.xaml</DependentUpon>
+    </Compile>
+    <Page Include="UserControls\ExtendFriendList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\MessageShow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\SearchBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\MessageList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\MyImage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\NewAGroup.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\RegExtPage2.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\SearchFriendsByName.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\SetingWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\AddFriends.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\ExtendList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Theme\BureauBlack.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Theme\BureauBlue.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Theme\ExpressionDark.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Theme\ExpressionLight.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\LoginPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Windows\RegExtPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\RegisterPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Theme\ShinyBlue.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Theme\ShinyRed.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\SwingImage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\UcImageCropper.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Page>
+    <Page Include="Windows\UserInfoModify.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\UserWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Theme\WhistlerBlue.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="ClassDiagram2.cd" />
+    <None Include="ClassDiagram3.cd" />
+    <None Include="ClassDiagram4.cd" />
+    <None Include="ClassDiagram5.cd" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\b0.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MulticastNetWork\MulticastNetWork.csproj">
+      <Project>{caca60fe-b543-41ad-bf69-fdf49ebd0fa5}</Project>
+      <Name>MulticastNetWork</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\282b92730273c9724334177f.gif" />
+    <Resource Include="Resource\QQ图片20140313153321.gif" />
+    <Resource Include="Resource\tsoi.bmp" />
+    <Resource Include="Resource\卖萌.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\back_button.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\wicon.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\accept.ico" />
+    <Resource Include="Resource\add.ico" />
+    <Resource Include="Resource\attachment.ico" />
+    <Resource Include="Resource\back.ico" />
+    <Resource Include="Resource\calculator.ico" />
+    <Resource Include="Resource\comment.ico" />
+    <Resource Include="Resource\cut.ico" />
+    <Resource Include="Resource\delete.ico" />
+    <Resource Include="Resource\down.ico" />
+    <Resource Include="Resource\folder.ico" />
+    <Resource Include="Resource\help.ico" />
+    <Resource Include="Resource\home.ico" />
+    <Resource Include="Resource\info.ico" />
+    <Resource Include="Resource\next.ico" />
+    <Resource Include="Resource\process.ico" />
+    <Resource Include="Resource\remove.ico" />
+    <Resource Include="Resource\rss.ico" />
+    <Resource Include="Resource\trash.ico" />
+    <Resource Include="Resource\up.ico" />
+    <Resource Include="Resource\warning.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\background.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\40.ico" />
+    <Resource Include="Resource\62.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\background2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\left-grey.png" />
+    <Resource Include="Resource\right-grey.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\浅蓝.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\icon\accept.png" />
+    <Resource Include="Resource\icon\add.png" />
+    <Resource Include="Resource\icon\alarm.png" />
+    <Resource Include="Resource\icon\anchor.png" />
+    <Resource Include="Resource\icon\application.png" />
+    <Resource Include="Resource\icon\application2.png" />
+    <Resource Include="Resource\icon\application_add.png" />
+    <Resource Include="Resource\icon\application_cascade.png" />
+    <Resource Include="Resource\icon\application_delete.png" />
+    <Resource Include="Resource\icon\application_double.png" />
+    <Resource Include="Resource\icon\application_edit.png" />
+    <Resource Include="Resource\icon\application_error.png" />
+    <Resource Include="Resource\icon\application_form.png" />
+    <Resource Include="Resource\icon\application_get.png" />
+    <Resource Include="Resource\icon\application_go.png" />
+    <Resource Include="Resource\icon\application_home.png" />
+    <Resource Include="Resource\icon\application_key.png" />
+    <Resource Include="Resource\icon\application_lightning.png" />
+    <Resource Include="Resource\icon\application_link.png" />
+    <Resource Include="Resource\icon\application_osx.png" />
+    <Resource Include="Resource\icon\application_osx_terminal.png" />
+    <Resource Include="Resource\icon\application_put.png" />
+    <Resource Include="Resource\icon\application_side_boxes.png" />
+    <Resource Include="Resource\icon\application_side_contract.png" />
+    <Resource Include="Resource\icon\application_side_expand.png" />
+    <Resource Include="Resource\icon\application_side_list.png" />
+    <Resource Include="Resource\icon\application_side_tree.png" />
+    <Resource Include="Resource\icon\application_split.png" />
+    <Resource Include="Resource\icon\application_tile_horizontal.png" />
+    <Resource Include="Resource\icon\application_tile_vertical.png" />
+    <Resource Include="Resource\icon\application_view_columns.png" />
+    <Resource Include="Resource\icon\application_view_detail.png" />
+    <Resource Include="Resource\icon\application_view_gallery.png" />
+    <Resource Include="Resource\icon\application_view_icons.png" />
+    <Resource Include="Resource\icon\application_view_list.png" />
+    <Resource Include="Resource\icon\application_view_tile.png" />
+    <Resource Include="Resource\icon\application_view_xp.png" />
+    <Resource Include="Resource\icon\application_view_xp_terminal.png" />
+    <Resource Include="Resource\icon\arrow_branch.png" />
+    <Resource Include="Resource\icon\arrow_divide.png" />
+    <Resource Include="Resource\icon\arrow_in.png" />
+    <Resource Include="Resource\icon\arrow_inout.png" />
+    <Resource Include="Resource\icon\arrow_join.png" />
+    <Resource Include="Resource\icon\arrow_left.png" />
+    <Resource Include="Resource\icon\arrow_merge.png" />
+    <Resource Include="Resource\icon\arrow_out.png" />
+    <Resource Include="Resource\icon\arrow_redo.png" />
+    <Resource Include="Resource\icon\arrow_refresh.png" />
+    <Resource Include="Resource\icon\arrow_right.png" />
+    <Resource Include="Resource\icon\arrow_undo.png" />
+    <Resource Include="Resource\icon\asterisk_orange.png" />
+    <Resource Include="Resource\icon\attach.png" />
+    <Resource Include="Resource\icon\attach_2.png" />
+    <Resource Include="Resource\icon\award_star_gold.png" />
+    <Resource Include="Resource\icon\bandaid.png" />
+    <Resource Include="Resource\icon\basket.png" />
+    <Resource Include="Resource\icon\bell.png" />
+    <Resource Include="Resource\icon\bin_closed.png" />
+    <Resource Include="Resource\icon\blog.png" />
+    <Resource Include="Resource\icon\blueprint.png" />
+    <Resource Include="Resource\icon\blueprint_horizontal.png" />
+    <Resource Include="Resource\icon\bluetooth.png" />
+    <Resource Include="Resource\icon\bomb.png" />
+    <Resource Include="Resource\icon\book.png" />
+    <Resource Include="Resource\icon\bookmark.png" />
+    <Resource Include="Resource\icon\bookmark_book.png" />
+    <Resource Include="Resource\icon\bookmark_book_open.png" />
+    <Resource Include="Resource\icon\bookmark_document.png" />
+    <Resource Include="Resource\icon\bookmark_folder.png" />
+    <Resource Include="Resource\icon\books.png" />
+    <Resource Include="Resource\icon\book_addresses.png" />
+    <Resource Include="Resource\icon\book_next.png" />
+    <Resource Include="Resource\icon\book_open.png" />
+    <Resource Include="Resource\icon\book_previous.png" />
+    <Resource Include="Resource\icon\box.png" />
+    <Resource Include="Resource\icon\brick.png" />
+    <Resource Include="Resource\icon\bricks.png" />
+    <Resource Include="Resource\icon\briefcase.png" />
+    <Resource Include="Resource\icon\bug.png" />
+    <Resource Include="Resource\icon\buildings.png" />
+    <Resource Include="Resource\icon\bullet_add_1.png" />
+    <Resource Include="Resource\icon\bullet_add_2.png" />
+    <Resource Include="Resource\icon\bullet_key.png" />
+    <Resource Include="Resource\icon\cake.png" />
+    <Resource Include="Resource\icon\calculator.png" />
+    <Resource Include="Resource\icon\calendar_1.png" />
+    <Resource Include="Resource\icon\calendar_2.png" />
+    <Resource Include="Resource\icon\camera.png" />
+    <Resource Include="Resource\icon\cancel.png" />
+    <Resource Include="Resource\icon\car.png" />
+    <Resource Include="Resource\icon\cart.png" />
+    <Resource Include="Resource\icon\cd.png" />
+    <Resource Include="Resource\icon\chart_bar.png" />
+    <Resource Include="Resource\icon\chart_curve.png" />
+    <Resource Include="Resource\icon\chart_line.png" />
+    <Resource Include="Resource\icon\chart_organisation.png" />
+    <Resource Include="Resource\icon\chart_pie.png" />
+    <Resource Include="Resource\icon\clipboard_paste_image.png" />
+    <Resource Include="Resource\icon\clipboard_sign.png" />
+    <Resource Include="Resource\icon\clipboard_text.png" />
+    <Resource Include="Resource\icon\clock.png" />
+    <Resource Include="Resource\icon\cog.png" />
+    <Resource Include="Resource\icon\coins.png" />
+    <Resource Include="Resource\icon\color_swatch_1.png" />
+    <Resource Include="Resource\icon\color_swatch_2.png" />
+    <Resource Include="Resource\icon\comment.png" />
+    <Resource Include="Resource\icon\compass.png" />
+    <Resource Include="Resource\icon\compress.png" />
+    <Resource Include="Resource\icon\computer.png" />
+    <Resource Include="Resource\icon\connect.png" />
+    <Resource Include="Resource\icon\contrast.png" />
+    <Resource Include="Resource\icon\control_eject.png" />
+    <Resource Include="Resource\icon\control_end.png" />
+    <Resource Include="Resource\icon\control_equalizer.png" />
+    <Resource Include="Resource\icon\control_fastforward.png" />
+    <Resource Include="Resource\icon\control_pause.png" />
+    <Resource Include="Resource\icon\control_play.png" />
+    <Resource Include="Resource\icon\control_repeat.png" />
+    <Resource Include="Resource\icon\control_rewind.png" />
+    <Resource Include="Resource\icon\control_start.png" />
+    <Resource Include="Resource\icon\control_stop.png" />
+    <Resource Include="Resource\icon\control_wheel.png" />
+    <Resource Include="Resource\icon\counter.png" />
+    <Resource Include="Resource\icon\counter_count.png" />
+    <Resource Include="Resource\icon\counter_count_up.png" />
+    <Resource Include="Resource\icon\counter_reset.png" />
+    <Resource Include="Resource\icon\counter_stop.png" />
+    <Resource Include="Resource\icon\cross.png" />
+    <Resource Include="Resource\icon\cross_octagon.png" />
+    <Resource Include="Resource\icon\cross_octagon_fram.png" />
+    <Resource Include="Resource\icon\cross_shield.png" />
+    <Resource Include="Resource\icon\cross_shield_2.png" />
+    <Resource Include="Resource\icon\crown.png" />
+    <Resource Include="Resource\icon\crown_bronze.png" />
+    <Resource Include="Resource\icon\crown_silver.png" />
+    <Resource Include="Resource\icon\css.png" />
+    <Resource Include="Resource\icon\cursor.png" />
+    <Resource Include="Resource\icon\cut.png" />
+    <Resource Include="Resource\icon\dashboard.png" />
+    <Resource Include="Resource\icon\data.png" />
+    <Resource Include="Resource\icon\database.png" />
+    <Resource Include="Resource\icon\databases.png" />
+    <Resource Include="Resource\icon\delete.png" />
+    <Resource Include="Resource\icon\delivery.png" />
+    <Resource Include="Resource\icon\desktop.png" />
+    <Resource Include="Resource\icon\desktop_empty.png" />
+    <Resource Include="Resource\icon\direction.png" />
+    <Resource Include="Resource\icon\disconnect.png" />
+    <Resource Include="Resource\icon\disk.png" />
+    <Resource Include="Resource\icon\doc_access.png" />
+    <Resource Include="Resource\icon\doc_break.png" />
+    <Resource Include="Resource\icon\doc_convert.png" />
+    <Resource Include="Resource\icon\doc_excel_csv.png" />
+    <Resource Include="Resource\icon\doc_excel_table.png" />
+    <Resource Include="Resource\icon\doc_film.png" />
+    <Resource Include="Resource\icon\doc_illustrator.png" />
+    <Resource Include="Resource\icon\doc_music.png" />
+    <Resource Include="Resource\icon\doc_music_playlist.png" />
+    <Resource Include="Resource\icon\doc_offlice.png" />
+    <Resource Include="Resource\icon\doc_page.png" />
+    <Resource Include="Resource\icon\doc_page_previous.png" />
+    <Resource Include="Resource\icon\doc_pdf.png" />
+    <Resource Include="Resource\icon\doc_photoshop.png" />
+    <Resource Include="Resource\icon\doc_resize.png" />
+    <Resource Include="Resource\icon\doc_resize_actual.png" />
+    <Resource Include="Resource\icon\doc_shred.png" />
+    <Resource Include="Resource\icon\doc_stand.png" />
+    <Resource Include="Resource\icon\doc_table.png" />
+    <Resource Include="Resource\icon\doc_tag.png" />
+    <Resource Include="Resource\icon\doc_text_image.png" />
+    <Resource Include="Resource\icon\door.png" />
+    <Resource Include="Resource\icon\door_in.png" />
+    <Resource Include="Resource\icon\drawer.png" />
+    <Resource Include="Resource\icon\drink.png" />
+    <Resource Include="Resource\icon\drink_empty.png" />
+    <Resource Include="Resource\icon\drive.png" />
+    <Resource Include="Resource\icon\drive_burn.png" />
+    <Resource Include="Resource\icon\drive_cd.png" />
+    <Resource Include="Resource\icon\drive_cd_empty.png" />
+    <Resource Include="Resource\icon\drive_delete.png" />
+    <Resource Include="Resource\icon\drive_disk.png" />
+    <Resource Include="Resource\icon\drive_error.png" />
+    <Resource Include="Resource\icon\drive_go.png" />
+    <Resource Include="Resource\icon\drive_link.png" />
+    <Resource Include="Resource\icon\drive_network.png" />
+    <Resource Include="Resource\icon\drive_rename.png" />
+    <Resource Include="Resource\icon\dvd.png" />
+    <Resource Include="Resource\icon\email.png" />
+    <Resource Include="Resource\icon\email_open.png" />
+    <Resource Include="Resource\icon\email_open_image.png" />
+    <Resource Include="Resource\icon\emoticon_evilgrin.png" />
+    <Resource Include="Resource\icon\emoticon_grin.png" />
+    <Resource Include="Resource\icon\emoticon_happy.png" />
+    <Resource Include="Resource\icon\emoticon_smile.png" />
+    <Resource Include="Resource\icon\emoticon_surprised.png" />
+    <Resource Include="Resource\icon\emoticon_tongue.png" />
+    <Resource Include="Resource\icon\emoticon_unhappy.png" />
+    <Resource Include="Resource\icon\emoticon_waii.png" />
+    <Resource Include="Resource\icon\emoticon_wink.png" />
+    <Resource Include="Resource\icon\envelope.png" />
+    <Resource Include="Resource\icon\envelope_2.png" />
+    <Resource Include="Resource\icon\error.png" />
+    <Resource Include="Resource\icon\exclamation.png" />
+    <Resource Include="Resource\icon\exclamation_octagon_fram.png" />
+    <Resource Include="Resource\icon\eye.png" />
+    <Resource Include="Resource\icon\feed.png" />
+    <Resource Include="Resource\icon\feed_ballon.png" />
+    <Resource Include="Resource\icon\feed_document.png" />
+    <Resource Include="Resource\icon\female.png" />
+    <Resource Include="Resource\icon\film.png" />
+    <Resource Include="Resource\icon\films.png" />
+    <Resource Include="Resource\icon\find.png" />
+    <Resource Include="Resource\icon\flag_blue.png" />
+    <Resource Include="Resource\icon\folder.png" />
+    <Resource Include="Resource\icon\font.png" />
+    <Resource Include="Resource\icon\funnel.png" />
+    <Resource Include="Resource\icon\grid.png" />
+    <Resource Include="Resource\icon\grid_dot.png" />
+    <Resource Include="Resource\icon\group.png" />
+    <Resource Include="Resource\icon\hammer.png" />
+    <Resource Include="Resource\icon\hammer_screwdriver.png" />
+    <Resource Include="Resource\icon\hand.png" />
+    <Resource Include="Resource\icon\hand_point.png" />
+    <Resource Include="Resource\icon\heart.png" />
+    <Resource Include="Resource\icon\heart_break.png" />
+    <Resource Include="Resource\icon\heart_empty.png" />
+    <Resource Include="Resource\icon\heart_half.png" />
+    <Resource Include="Resource\icon\heart_small.png" />
+    <Resource Include="Resource\icon\help.png" />
+    <Resource Include="Resource\icon\highlighter.png" />
+    <Resource Include="Resource\icon\house.png" />
+    <Resource Include="Resource\icon\html.png" />
+    <Resource Include="Resource\icon\images.png" />
+    <Resource Include="Resource\icon\image_1.png" />
+    <Resource Include="Resource\icon\image_2.png" />
+    <Resource Include="Resource\icon\inbox.png" />
+    <Resource Include="Resource\icon\ipod.png" />
+    <Resource Include="Resource\icon\ipod_cast.png" />
+    <Resource Include="Resource\icon\joystick.png" />
+    <Resource Include="Resource\icon\key.png" />
+    <Resource Include="Resource\icon\keyboard.png" />
+    <Resource Include="Resource\icon\layers.png" />
+    <Resource Include="Resource\icon\layer_treansparent.png" />
+    <Resource Include="Resource\icon\layout.png" />
+    <Resource Include="Resource\icon\layout_header_footer_3.png" />
+    <Resource Include="Resource\icon\layout_header_footer_3_mix.png" />
+    <Resource Include="Resource\icon\layout_join.png" />
+    <Resource Include="Resource\icon\layout_join_vertical.png" />
+    <Resource Include="Resource\icon\layout_select.png" />
+    <Resource Include="Resource\icon\layout_select_content.png" />
+    <Resource Include="Resource\icon\layout_select_footer.png" />
+    <Resource Include="Resource\icon\layout_select_sidebar.png" />
+    <Resource Include="Resource\icon\layout_split.png" />
+    <Resource Include="Resource\icon\layout_split_vertical.png" />
+    <Resource Include="Resource\icon\lifebuoy.png" />
+    <Resource Include="Resource\icon\lightbulb.png" />
+    <Resource Include="Resource\icon\lightbulb_off.png" />
+    <Resource Include="Resource\icon\lightning.png" />
+    <Resource Include="Resource\icon\link.png" />
+    <Resource Include="Resource\icon\link_break.png" />
+    <Resource Include="Resource\icon\lock.png" />
+    <Resource Include="Resource\icon\lock_unlock.png" />
+    <Resource Include="Resource\icon\magnet.png" />
+    <Resource Include="Resource\icon\magnifier.png" />
+    <Resource Include="Resource\icon\magnifier_zoom_in.png" />
+    <Resource Include="Resource\icon\male.png" />
+    <Resource Include="Resource\icon\map.png" />
+    <Resource Include="Resource\icon\marker.png" />
+    <Resource Include="Resource\icon\medal_bronze_1.png" />
+    <Resource Include="Resource\icon\medal_gold_1.png" />
+    <Resource Include="Resource\icon\media_player_small_blue.png" />
+    <Resource Include="Resource\icon\microphone.png" />
+    <Resource Include="Resource\icon\mobile_phone.png" />
+    <Resource Include="Resource\icon\money.png" />
+    <Resource Include="Resource\icon\money_dollar.png" />
+    <Resource Include="Resource\icon\money_euro.png" />
+    <Resource Include="Resource\icon\money_pound.png" />
+    <Resource Include="Resource\icon\money_yen.png" />
+    <Resource Include="Resource\icon\monitor.png" />
+    <Resource Include="Resource\icon\mouse.png" />
+    <Resource Include="Resource\icon\music.png" />
+    <Resource Include="Resource\icon\music_beam.png" />
+    <Resource Include="Resource\icon\neutral.png" />
+    <Resource Include="Resource\icon\new.png" />
+    <Resource Include="Resource\icon\newspaper.png" />
+    <Resource Include="Resource\icon\note.png" />
+    <Resource Include="Resource\icon\nuclear.png" />
+    <Resource Include="Resource\icon\package.png" />
+    <Resource Include="Resource\icon\page.png" />
+    <Resource Include="Resource\icon\page_2.png" />
+    <Resource Include="Resource\icon\page_2_copy.png" />
+    <Resource Include="Resource\icon\page_code.png" />
+    <Resource Include="Resource\icon\page_copy.png" />
+    <Resource Include="Resource\icon\page_excel.png" />
+    <Resource Include="Resource\icon\page_lightning.png" />
+    <Resource Include="Resource\icon\page_paste.png" />
+    <Resource Include="Resource\icon\page_red.png" />
+    <Resource Include="Resource\icon\page_refresh.png" />
+    <Resource Include="Resource\icon\page_save.png" />
+    <Resource Include="Resource\icon\page_white_cplusplus.png" />
+    <Resource Include="Resource\icon\page_white_csharp.png" />
+    <Resource Include="Resource\icon\page_white_cup.png" />
+    <Resource Include="Resource\icon\page_white_database.png" />
+    <Resource Include="Resource\icon\page_white_delete.png" />
+    <Resource Include="Resource\icon\page_white_dvd.png" />
+    <Resource Include="Resource\icon\page_white_edit.png" />
+    <Resource Include="Resource\icon\page_white_error.png" />
+    <Resource Include="Resource\icon\page_white_excel.png" />
+    <Resource Include="Resource\icon\page_white_find.png" />
+    <Resource Include="Resource\icon\page_white_flash.png" />
+    <Resource Include="Resource\icon\page_white_freehand.png" />
+    <Resource Include="Resource\icon\page_white_gear.png" />
+    <Resource Include="Resource\icon\page_white_get.png" />
+    <Resource Include="Resource\icon\page_white_paintbrush.png" />
+    <Resource Include="Resource\icon\page_white_paste.png" />
+    <Resource Include="Resource\icon\page_white_php.png" />
+    <Resource Include="Resource\icon\page_white_picture.png" />
+    <Resource Include="Resource\icon\page_white_powerpoint.png" />
+    <Resource Include="Resource\icon\page_white_put.png" />
+    <Resource Include="Resource\icon\page_white_ruby.png" />
+    <Resource Include="Resource\icon\page_white_stack.png" />
+    <Resource Include="Resource\icon\page_white_star.png" />
+    <Resource Include="Resource\icon\page_white_swoosh.png" />
+    <Resource Include="Resource\icon\page_white_text.png" />
+    <Resource Include="Resource\icon\page_white_text_width.png" />
+    <Resource Include="Resource\icon\page_white_tux.png" />
+    <Resource Include="Resource\icon\page_white_vector.png" />
+    <Resource Include="Resource\icon\page_white_visualstudio.png" />
+    <Resource Include="Resource\icon\page_white_width.png" />
+    <Resource Include="Resource\icon\page_white_word.png" />
+    <Resource Include="Resource\icon\page_white_world.png" />
+    <Resource Include="Resource\icon\page_white_wrench.png" />
+    <Resource Include="Resource\icon\page_white_zip.png" />
+    <Resource Include="Resource\icon\paintbrush.png" />
+    <Resource Include="Resource\icon\paintcan.png" />
+    <Resource Include="Resource\icon\palette.png" />
+    <Resource Include="Resource\icon\paper_bag.png" />
+    <Resource Include="Resource\icon\paste_plain.png" />
+    <Resource Include="Resource\icon\paste_word.png" />
+    <Resource Include="Resource\icon\pencil.png" />
+    <Resource Include="Resource\icon\photo.png" />
+    <Resource Include="Resource\icon\photos.png" />
+    <Resource Include="Resource\icon\photo_album.png" />
+    <Resource Include="Resource\icon\piano.png" />
+    <Resource Include="Resource\icon\picture.png" />
+    <Resource Include="Resource\icon\pilcrow.png" />
+    <Resource Include="Resource\icon\pill.png" />
+    <Resource Include="Resource\icon\pin.png" />
+    <Resource Include="Resource\icon\pipette.png" />
+    <Resource Include="Resource\icon\plaing_card.png" />
+    <Resource Include="Resource\icon\plug.png" />
+    <Resource Include="Resource\icon\plugin.png" />
+    <Resource Include="Resource\icon\printer.png" />
+    <Resource Include="Resource\icon\projection_screen.png" />
+    <Resource Include="Resource\icon\projection_screen_present.png" />
+    <Resource Include="Resource\icon\rainbow.png" />
+    <Resource Include="Resource\icon\readme.txt" />
+    <Resource Include="Resource\icon\report.png" />
+    <Resource Include="Resource\icon\rocket.png" />
+    <Resource Include="Resource\icon\rosette.png" />
+    <Resource Include="Resource\icon\rss.png" />
+    <Resource Include="Resource\icon\ruby.png" />
+    <Resource Include="Resource\icon\ruler_1.png" />
+    <Resource Include="Resource\icon\ruler_2.png" />
+    <Resource Include="Resource\icon\ruler_crop.png" />
+    <Resource Include="Resource\icon\ruler_triangle.png" />
+    <Resource Include="Resource\icon\safe.png" />
+    <Resource Include="Resource\icon\script.png" />
+    <Resource Include="Resource\icon\selection.png" />
+    <Resource Include="Resource\icon\selection_select.png" />
+    <Resource Include="Resource\icon\server.png" />
+    <Resource Include="Resource\icon\shading.png" />
+    <Resource Include="Resource\icon\shape_aling_bottom.png" />
+    <Resource Include="Resource\icon\shape_aling_center.png" />
+    <Resource Include="Resource\icon\shape_aling_left.png" />
+    <Resource Include="Resource\icon\shape_aling_middle.png" />
+    <Resource Include="Resource\icon\shape_aling_right.png" />
+    <Resource Include="Resource\icon\shape_aling_top.png" />
+    <Resource Include="Resource\icon\shape_flip_horizontal.png" />
+    <Resource Include="Resource\icon\shape_flip_vertical.png" />
+    <Resource Include="Resource\icon\shape_group.png" />
+    <Resource Include="Resource\icon\shape_handles.png" />
+    <Resource Include="Resource\icon\shape_move_back.png" />
+    <Resource Include="Resource\icon\shape_move_backwards.png" />
+    <Resource Include="Resource\icon\shape_move_forwards.png" />
+    <Resource Include="Resource\icon\shape_move_front.png" />
+    <Resource Include="Resource\icon\shape_square.png" />
+    <Resource Include="Resource\icon\shield.png" />
+    <Resource Include="Resource\icon\sitemap.png" />
+    <Resource Include="Resource\icon\slide.png" />
+    <Resource Include="Resource\icon\slides.png" />
+    <Resource Include="Resource\icon\slides_stack.png" />
+    <Resource Include="Resource\icon\smiley_confuse.png" />
+    <Resource Include="Resource\icon\smiley_cool.png" />
+    <Resource Include="Resource\icon\smiley_cry.png" />
+    <Resource Include="Resource\icon\smiley_fat.png" />
+    <Resource Include="Resource\icon\smiley_mad.png" />
+    <Resource Include="Resource\icon\smiley_red.png" />
+    <Resource Include="Resource\icon\smiley_roll.png" />
+    <Resource Include="Resource\icon\smiley_slim.png" />
+    <Resource Include="Resource\icon\smiley_yell.png" />
+    <Resource Include="Resource\icon\socket.png" />
+    <Resource Include="Resource\icon\sockets.png" />
+    <Resource Include="Resource\icon\sort.png" />
+    <Resource Include="Resource\icon\sort_alphabet.png" />
+    <Resource Include="Resource\icon\sort_date.png" />
+    <Resource Include="Resource\icon\sort_disable.png" />
+    <Resource Include="Resource\icon\sort_number.png" />
+    <Resource Include="Resource\icon\sort_price.png" />
+    <Resource Include="Resource\icon\sort_quantity.png" />
+    <Resource Include="Resource\icon\sort_rating.png" />
+    <Resource Include="Resource\icon\sound.png" />
+    <Resource Include="Resource\icon\sound_note.png" />
+    <Resource Include="Resource\icon\spellcheck.png" />
+    <Resource Include="Resource\icon\sport_8ball.png" />
+    <Resource Include="Resource\icon\sport_basketball.png" />
+    <Resource Include="Resource\icon\sport_football.png" />
+    <Resource Include="Resource\icon\sport_golf.png" />
+    <Resource Include="Resource\icon\sport_raquet.png" />
+    <Resource Include="Resource\icon\sport_shuttlecock.png" />
+    <Resource Include="Resource\icon\sport_soccer.png" />
+    <Resource Include="Resource\icon\sport_tennis.png" />
+    <Resource Include="Resource\icon\stamp.png" />
+    <Resource Include="Resource\icon\star_1.png" />
+    <Resource Include="Resource\icon\star_2.png" />
+    <Resource Include="Resource\icon\status_online.png" />
+    <Resource Include="Resource\icon\stop.png" />
+    <Resource Include="Resource\icon\style.png" />
+    <Resource Include="Resource\icon\sum.png" />
+    <Resource Include="Resource\icon\sum_2.png" />
+    <Resource Include="Resource\icon\switch.png" />
+    <Resource Include="Resource\icon\tab.png" />
+    <Resource Include="Resource\icon\table.png" />
+    <Resource Include="Resource\icon\tag.png" />
+    <Resource Include="Resource\icon\tag_blue.png" />
+    <Resource Include="Resource\icon\target.png" />
+    <Resource Include="Resource\icon\telephone.png" />
+    <Resource Include="Resource\icon\television.png" />
+    <Resource Include="Resource\icon\textfield.png" />
+    <Resource Include="Resource\icon\textfield_rename.png" />
+    <Resource Include="Resource\icon\text_align_center.png" />
+    <Resource Include="Resource\icon\text_align_justify.png" />
+    <Resource Include="Resource\icon\text_align_left.png" />
+    <Resource Include="Resource\icon\text_align_right.png" />
+    <Resource Include="Resource\icon\text_allcaps.png" />
+    <Resource Include="Resource\icon\text_bold.png" />
+    <Resource Include="Resource\icon\text_columns.png" />
+    <Resource Include="Resource\icon\text_dropcaps.png" />
+    <Resource Include="Resource\icon\text_heading_1.png" />
+    <Resource Include="Resource\icon\text_horizontalrule.png" />
+    <Resource Include="Resource\icon\text_indent.png" />
+    <Resource Include="Resource\icon\text_indent_remove.png" />
+    <Resource Include="Resource\icon\text_italic.png" />
+    <Resource Include="Resource\icon\text_kerning.png" />
+    <Resource Include="Resource\icon\text_letterspacing.png" />
+    <Resource Include="Resource\icon\text_letter_omega.png" />
+    <Resource Include="Resource\icon\text_linespacing.png" />
+    <Resource Include="Resource\icon\text_list_bullets.png" />
+    <Resource Include="Resource\icon\text_list_numbers.png" />
+    <Resource Include="Resource\icon\text_lowercase.png" />
+    <Resource Include="Resource\icon\text_padding_bottom.png" />
+    <Resource Include="Resource\icon\text_padding_left.png" />
+    <Resource Include="Resource\icon\text_padding_right.png" />
+    <Resource Include="Resource\icon\text_padding_top.png" />
+    <Resource Include="Resource\icon\text_signature.png" />
+    <Resource Include="Resource\icon\text_smallcaps.png" />
+    <Resource Include="Resource\icon\text_strikethrough.png" />
+    <Resource Include="Resource\icon\text_subscript.png" />
+    <Resource Include="Resource\icon\ticket.png" />
+    <Resource Include="Resource\icon\timeline_marker.png" />
+    <Resource Include="Resource\icon\traffic.png" />
+    <Resource Include="Resource\icon\transmit.png" />
+    <Resource Include="Resource\icon\trophy.png" />
+    <Resource Include="Resource\icon\trophy_bronze.png" />
+    <Resource Include="Resource\icon\trophy_silver.png" />
+    <Resource Include="Resource\icon\ui_combo_box.png" />
+    <Resource Include="Resource\icon\ui_saccordion.png" />
+    <Resource Include="Resource\icon\ui_slider_1.png" />
+    <Resource Include="Resource\icon\ui_slider_2.png" />
+    <Resource Include="Resource\icon\ui_tab_bottom.png" />
+    <Resource Include="Resource\icon\ui_tab_content.png" />
+    <Resource Include="Resource\icon\ui_tab_disable.png" />
+    <Resource Include="Resource\icon\ui_tab_side.png" />
+    <Resource Include="Resource\icon\ui_text_field_hidden.png" />
+    <Resource Include="Resource\icon\ui_text_field_password.png" />
+    <Resource Include="Resource\icon\umbrella.png" />
+    <Resource Include="Resource\icon\user.png" />
+    <Resource Include="Resource\icon\user_black_female.png" />
+    <Resource Include="Resource\icon\user_business.png" />
+    <Resource Include="Resource\icon\user_business_boss.png" />
+    <Resource Include="Resource\icon\user_female.png" />
+    <Resource Include="Resource\icon\user_silhouette.png" />
+    <Resource Include="Resource\icon\user_thief.png" />
+    <Resource Include="Resource\icon\user_thief_baldie.png" />
+    <Resource Include="Resource\icon\vcard.png" />
+    <Resource Include="Resource\icon\vector.png" />
+    <Resource Include="Resource\icon\wait.png" />
+    <Resource Include="Resource\icon\wall.png" />
+    <Resource Include="Resource\icon\wall_break.png" />
+    <Resource Include="Resource\icon\wall_brick.png" />
+    <Resource Include="Resource\icon\wall_disable.png" />
+    <Resource Include="Resource\icon\wand.png" />
+    <Resource Include="Resource\icon\weather_clouds.png" />
+    <Resource Include="Resource\icon\weather_cloudy.png" />
+    <Resource Include="Resource\icon\weather_lightning.png" />
+    <Resource Include="Resource\icon\weather_rain.png" />
+    <Resource Include="Resource\icon\weather_snow.png" />
+    <Resource Include="Resource\icon\weather_sun.png" />
+    <Resource Include="Resource\icon\webcam.png" />
+    <Resource Include="Resource\icon\world.png" />
+    <Resource Include="Resource\icon\zone.png" />
+    <Resource Include="Resource\icon\zones.png" />
+    <Resource Include="Resource\icon\zone_money.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\father_bkg.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\father_bkg1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\father_mask.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 和 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\select.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\button\button40.png" />
+    <Resource Include="Resource\button\button41.png" />
+    <Resource Include="Resource\button\button42.png" />
+    <Resource Include="Resource\button\button50.png" />
+    <Resource Include="Resource\button\button51.png" />
+    <Resource Include="Resource\button\button52.png" />
+    <Resource Include="Resource\button\button60.png" />
+    <Resource Include="Resource\button\button61.png" />
+    <Resource Include="Resource\button\button62.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\logo.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\yes.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\login_bk.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\login.gif" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
